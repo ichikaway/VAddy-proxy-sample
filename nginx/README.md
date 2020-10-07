@@ -3,7 +3,12 @@ VAddyでVerificationファイルが設置できない環境で、検査対象サ
 このディレクトリの、`nginx.conf`と`site.d/site.conf`が設定ファイルになります。  
 `site.conf`に記載している`/var/www/html`がwebrootですので必要に応じて変えてください。
 このwebrootに`vaddy-xxxxx.html`というようなVerificationファイルを設置してください。
-このファイルがある時は、nginxがhtmlを返します。 それ以外のURLは裏のバックエンドサーバ（検査対象サーバ）に接続してコンテンツを返します。
+このファイルがある時は、nginxがhtmlを返します。 それ以外のURLは裏のバックエンドサーバ（検査対象サーバ）に接続してコンテンツを返します。  
+
+`nginx.conf`は下記の行からがProxy設定になります。  
+https://github.com/ichikaway/VAddy-proxy-sample/blob/master/nginx/nginx.conf#L36
+
+ご利用のサーバ名に応じて、`site.conf`の`server_name`や`proxy_pass`の値を変更してください。
 
 ## グローバル版
 VAddy -> nginx(reverse proxy) -> OriginServer
