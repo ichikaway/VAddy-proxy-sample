@@ -1,4 +1,5 @@
-VAddyでVerificationファイルが設置できない環境で、検査対象サーバの手前にリバースプロキシサーバを設置して対応する方法です。
+VAddyでVerificationファイルが設置できない環境で、検査対象サーバの手前にリバースプロキシサーバを設置して対応する方法です。  
+リバースプロキシ(nginx)がVAddyのVerificationファイルを返し、それ以外のリクエストは検査対象サーバのOriginサーバにProxyしてコンテンツを返します。  
 
 このディレクトリの、`nginx.conf`と`site.d/site.conf`が設定ファイルになります。  
 `site.conf`に記載している`/var/www/html`がwebrootですので必要に応じて変えてください。
